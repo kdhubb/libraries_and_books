@@ -21,7 +21,7 @@ RSpec.describe "libraries index page", type: :feature do
                                 num_public_computers: 15)
                           
     visit "/libraries/#{library_1.id}"
-    save_and_open_page
+    # save_and_open_page
 
     expect(page).to have_content(library_1.system_name)
     expect(page).to_not have_content(library_2.branch_name)

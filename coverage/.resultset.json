@@ -8,26 +8,21 @@
           null
         ]
       },
-      "/Users/kdhubbard/mod_2/projects/libraries_and_books/app/controllers/libraries_controller.rb": {
+      "/Users/kdhubbard/mod_2/projects/libraries_and_books/app/models/application_record.rb": {
         "lines": [
           1,
           1,
-          0,
-          null,
-          null,
-          1,
-          1,
-          null,
           null
         ]
       },
-      "/Users/kdhubbard/mod_2/projects/libraries_and_books/app/controllers/application_controller.rb": {
+      "/Users/kdhubbard/mod_2/projects/libraries_and_books/app/models/book.rb": {
         "lines": [
+          1,
           1,
           null
         ]
       }
     },
-    "timestamp": 1683681621
+    "timestamp": 1683684132
   }
 }

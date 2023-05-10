@@ -10,13 +10,21 @@ RSpec.describe "books index page", type: :feature do
   # Then I see each Child in the system including the Child's attributes
   # (data from each column that is on the child table)
   it "diplays all books in the database with their attributes for all libraries" do 
-    book_1 = Book.create!(barcode: 008374,
+    library_1 = Library.create!(system_name: "Denver Public Library",
+                                branch_name: "Pauline Robinson",
+                                has_study_rooms: true,
+                                num_public_computers: 10)
+    library_2 = Library.create!(system_name: "Denver Public Library",
+                                branch_name: "Athmar Park",
+                                has_study_rooms: true,
+                                num_public_computers: 15)
+    book_1 = Book.create!(barcode: 8374,
                           author: "Andy Weir",
                           title: "Project Hail Mary",
                           on_shelf: false,
                           ytd_circ: 10,
                           library_id: 1)
-    book_2 = Book.create!(barcode: 009274,
+    book_2 = Book.create!(barcode: 9274,
                           author: "Louise Erdrich",
                           title: "The Night Watchman",
                           on_shelf: true,

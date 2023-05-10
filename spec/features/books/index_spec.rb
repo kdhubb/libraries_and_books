@@ -37,12 +37,12 @@ RSpec.describe "books index page", type: :feature do
     expect(page).to have_content(book_1.barcode)
     expect(page).to have_content(book_1.author)
     expect(page).to have_content(book_1.title)
-    expect(page).to have_content(book_1.on_shelf)
+    expect(page).to have_content("Available for checkout: no")
     expect(page).to have_content(book_1.ytd_circ)
     expect(page).to have_content(book_2.barcode)
     expect(page).to have_content(book_2.author)
     expect(page).to have_content(book_2.title)
-    expect(page).to have_content(book_2.on_shelf)
+    expect(page).to have_content("Available for checkout: yes")
     expect(page).to have_content(book_2.ytd_circ)
   end
 end

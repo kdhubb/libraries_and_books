@@ -8,6 +8,7 @@
                                     "no"
                                   end %></p>
   <p>Checkouts this year: <%= book.ytd_circ %></p>
+  <p>Barcode: <%= book.barcode %></p>
   <p>Owner: <%= (Library.find_by(id: book.library_id)).branch_name %> Branch Library</p>
   
 <% end %>

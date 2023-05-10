@@ -1,0 +1,10 @@
+<h2>Title: <%= @book.title %></h2>
+  <h3>Author: <%= @book.author %></h3>
+  <p> Available for checkout: <%= if @book.on_shelf == true
+                                    "yes"
+                                  else 
+                                    "no"
+                                  end %></p>
+  <p>Checkouts this year: <%= @book.ytd_circ %></p>
+  <p>Barcode: <%= @book.barcode %></p>
+  <p>Owner: <%= (Library.find_by(id: @book.library_id)).branch_name %> Branch Library</p>

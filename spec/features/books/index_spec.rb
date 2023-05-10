@@ -32,7 +32,7 @@ RSpec.describe "books index page", type: :feature do
                           library_id: library_2.id)
                           
     visit "/books"
-    save_and_open_page
+    # save_and_open_page
 
     expect(page).to have_content(book_1.barcode)
     expect(page).to have_content(book_1.author)

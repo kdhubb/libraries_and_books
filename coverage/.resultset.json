@@ -17,7 +17,13 @@
       },
       "/Users/kdhubbard/mod_2/projects/libraries_and_books/spec/models/library_spec.rb": {
         "lines": [
-
+          1,
+          null,
+          1,
+          1,
+          2,
+          null,
+          null
         ]
       },
       "/Users/kdhubbard/mod_2/projects/libraries_and_books/app/models/library.rb": {
@@ -28,6 +34,6 @@
         ]
       }
     },
-    "timestamp": 1683587587
+    "timestamp": 1683587693
   }
 }

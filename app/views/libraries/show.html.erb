@@ -1,0 +1,9 @@
+<h2><%= @library.branch_name%> Branch Library</h2>
+<h3><%= @library.system_name%> System </h3>
+<p>Public Computers: <%= @library.num_public_computers %></p>
+<p>This branch <%= if @library.has_study_rooms == true
+                      "has"
+                  else 
+                    "doesn't have" 
+                  end
+                  %> study rooms. </p>

@@ -21,8 +21,23 @@
           1,
           null
         ]
+      },
+      "/Users/kdhubbard/mod_2/projects/libraries_and_books/app/controllers/books_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/kdhubbard/mod_2/projects/libraries_and_books/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1683684132
+    "timestamp": 1683684976
   }
 }

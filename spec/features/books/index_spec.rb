@@ -23,13 +23,13 @@ RSpec.describe "books index page", type: :feature do
                           title: "Project Hail Mary",
                           on_shelf: false,
                           ytd_circ: 10,
-                          library_id: 1)
+                          library_id: library_1.id)
     book_2 = Book.create!(barcode: 9274,
                           author: "Louise Erdrich",
                           title: "The Night Watchman",
                           on_shelf: true,
                           ytd_circ: 3,
-                          library_id: 2)
+                          library_id: library_2.id)
                           
     visit "/books"
     save_and_open_page

@@ -1,0 +1,5 @@
+<h1> All Public Libraries </h1>
+<% @libraries.each do |library| %>
+  <h3>Library Branch: <%= library.branch_name %></h3>
+  <p>System: <%= library.system_name %></p>
+<% end %>

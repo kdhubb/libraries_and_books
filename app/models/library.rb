@@ -1,3 +1,3 @@
-class Library < ActiveRecord: :Base 
+class Library < ActiveRecord::Base 
   has_many :books
 end

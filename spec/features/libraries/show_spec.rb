@@ -22,7 +22,7 @@ RSpec.describe "libraries index page", type: :feature do
                                       ytd_circ: 3)                                                                    
                           
     visit "/libraries/#{library_1.id}"
-    save_and_open_page
+    # save_and_open_page
 
     expect(page).to have_content("#{library_1.system_name} System")
     expect(page).to_not have_content(library_2.branch_name)

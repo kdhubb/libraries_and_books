@@ -19,12 +19,7 @@ RSpec.describe "books show page", type: :feature do
                                 has_study_rooms: true,
                                 num_public_computers: 15)
     book_1 = library1.books.create!(barcode: 8374,
-                                    author: "something else",
-                                    title: "Project Hail Mary",
-                                    on_shelf: false,
-                                    ytd_circ: 10)
-    book_4 = library1.books.create!(barcode: 8374,
-                                    author: "something",
+                                    author: "Andy Weir",
                                     title: "Project Hail Mary",
                                     on_shelf: false,
                                     ytd_circ: 10)
@@ -34,14 +29,14 @@ RSpec.describe "books show page", type: :feature do
                                     on_shelf: true,
                                     ytd_circ: 3)
 
-    # require 'pry'; binding.pry
     visit "/books/#{book_1.id}"
+    save_and_open_page
 
-    expect(page).to have_content(book_1.barcode)
-    expect(page).to have_content(book_1.author)
-    expect(page).to have_content(book_1.title)
+    expect(page).to have_content("Barcode: #{book_1.barcode}")
+    expect(page).to have_content("Author: #{book_1.author}")
+    expect(page).to have_content("Title: #{book_1.title}")
     expect(page).to have_content("Available for checkout: no")
-    expect(page).to have_content(book_1.ytd_circ)
+    expect(page).to have_content("Checkouts this year: #{book_1.ytd_circ}")
     expect(page).to have_content("Owner: Pauline Robinson Branch Library")
     expect(page).to_not have_content(book_2.title)
     expect(page).to_not have_content(book_2.author)

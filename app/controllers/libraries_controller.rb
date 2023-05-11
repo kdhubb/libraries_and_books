@@ -1,6 +1,6 @@
 class LibrariesController < ApplicationController
   def index 
-    @libraries = Library.all
+    @libraries = Library.order(:created_at)
   end
 
   def show

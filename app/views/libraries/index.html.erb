@@ -2,4 +2,5 @@
 <% @libraries.each do |library| %>
   <h3>Library Branch: <%= library.branch_name %></h3>
   <p>System: <%= library.system_name %></p>
+  <p> Date Created: <%= library.created_at %>
 <% end %>

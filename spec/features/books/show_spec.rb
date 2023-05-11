@@ -1,14 +1,6 @@
 require "rails_helper"
 
 RSpec.describe "books show page", type: :feature do 
-# [ ] done
-
-# User Story 4, Child Show 
-
-# As a visitor
-# When I visit '/child_table_name/:id'
-# Then I see the child with that id including the child's attributes
-# (data from each column that is on the child table)
   it "displays all attributes of the given book" do 
     library1 = Library.create!(system_name: "Denver Public Library",
                                 branch_name: "Pauline Robinson",

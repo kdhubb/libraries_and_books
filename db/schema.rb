@@ -14,8 +14,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_08_224749) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "books", id: false, force: :cascade do |t|
-    t.bigserial "id", null: false
+  create_table "books", force: :cascade do |t|
     t.integer "barcode"
     t.text "author"
     t.text "title"

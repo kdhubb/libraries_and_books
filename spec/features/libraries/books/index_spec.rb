@@ -54,5 +54,7 @@ RSpec.describe "A library's books index page", type: :feature do
     expect(page).to have_content(book_3.ytd_circ)
     expect(page).to_not have_content(book_2.title)
     expect(page).to_not have_content(book_2.author)
+    expect(page).to have_content("All Books")
+    expect(page).to have_content("All Libraries")
   end
 end

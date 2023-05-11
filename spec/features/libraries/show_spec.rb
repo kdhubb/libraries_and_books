@@ -30,5 +30,7 @@ RSpec.describe "libraries index page", type: :feature do
     expect(page).to have_content("This branch has study rooms.")
     expect(page).to have_content(library_1.num_public_computers)
     expect(page).to have_content("Number of Books: 2")
+    # Look for testing language to test for link locations
+    expect(page).to have_content("Browse books at Pauline Robinson Branch Library")
   end
 end

@@ -1,0 +1,13 @@
+<h1> <%=@library.branch_name%> </h1>
+<h2> <%=@library.system_name%> </h2>
+<% @library.books.each do |book| %>
+<h3>Title: <%= book.title %></h3>
+  <h3>Author: <%= book.author %></h3>
+  <p> Available for checkout: <%= if book.on_shelf == true
+                                    "yes"
+                                  else 
+                                    "no"
+                                  end %></p>
+  <p>Checkouts this year: <%= book.ytd_circ %></p>
+  <p>Barcode: <%= book.barcode %></p>
+  <% end %>

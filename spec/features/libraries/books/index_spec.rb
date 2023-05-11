@@ -31,7 +31,7 @@ RSpec.describe "A library's books index page", type: :feature do
     book_3 = library_1.books.create!(barcode: 8353,
                                       author: "Octavia Butler",
                                       title: "Dawn",
-                                      on_shelf: false,
+                                      on_shelf: true,
                                       ytd_circ: 3)
     book_4 = library_2.books.create!(barcode: 9221,
                                       author: "Viet Thanh Nguyen",
@@ -50,7 +50,9 @@ RSpec.describe "A library's books index page", type: :feature do
     expect(page).to have_content(book_3.barcode)
     expect(page).to have_content(book_3.author)
     expect(page).to have_content(book_3.title)
-    expect(page).to have_content("Available for checkout: no")
+    expect(page).to have_content("Available for checkout: yes")
     expect(page).to have_content(book_3.ytd_circ)
     expect(page).to_not have_content(book_2.title)
     expect(page).to_not have_content(book_2.author)
+  end
+end

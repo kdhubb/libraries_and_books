@@ -1,7 +1,6 @@
 class LibrariesController < ApplicationController
   def index 
-    @libraries = Library.all
-    @libraries.order_branches_by_date
+    @libraries = Library.order_branches_by_date
   end
 
   def show

@@ -5,7 +5,7 @@ class Library < ApplicationRecord
     self.books.count
   end
 
-  def order_branches_by_date
-    self.order(:created_at)
+  def self.order_branches_by_date
+    order(:created_at)
   end
 end

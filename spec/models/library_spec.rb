@@ -45,5 +45,9 @@ RSpec.describe Library, type: :model do
       expect(@library_1.count_books).to eq(3)
       expect(@library_2.count_books).to eq(2)
     end
+
+    it "#order_branches_by_date" do 
+      expect(Library.order_branches_by_date).to eq(Library.order(:created_at))
+    end
   end
 end

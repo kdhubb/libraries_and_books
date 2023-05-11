@@ -8,4 +8,9 @@ Rails.application.routes.draw do
   get "/books", to: "books#index"
   get "/books/:id", to: "books#show"
   get "/libraries/:id/books", to: "library_books#index"
+  get "/libraries/new", to: "libraries#new"
+  post "/libraries", to: "libraries#create"
+  get "/libraries/:id/edit", to: "libraries#edit"
+  patch "/libraries", to: "libraries#update"
+  delete "/libraries/:id", to: "libraries#destroy" 
 end

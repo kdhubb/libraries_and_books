@@ -37,6 +37,7 @@ RSpec.describe "books show page", type: :feature do
     expect(page).to have_content(book_1.title)
     expect(page).to have_content("Available for checkout: no")
     expect(page).to have_content(book_1.ytd_circ)
+    expect(page).to have_content("Owner: Pauline Robinson Branch Library")
     expect(page).to_not have_content(book_2.title)
     expect(page).to_not have_content(book_2.author)
   end

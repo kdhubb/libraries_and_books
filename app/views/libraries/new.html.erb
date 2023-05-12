@@ -1,9 +1,9 @@
 <%= form_with url: '/libraries', method: :post, local: true do |form| %>
-  <%= form.label :system_name %> <br>
+  <%= form.label :system_name, "System Name:" %> <br>
   <%= form.text_field :system_name %> <br> 
-  <%= form.label :branch_name %> <br>
+  <%= form.label :branch_name, "Branch Name:" %> <br>
   <%= form.text_field :branch_name %> <br>
-  <%= form.select :has_study_rooms, [["This branch doesn't have study rooms."], ["This branch has study rooms."]] %> <br>
+  <%= form.select :has_study_rooms, "This library has study rooms", [true, false] %> <br>
   <%= form.label :num_public_computers, "Number of Public Computers:" %> <br>
   <%= form.number_field :num_public_computers %> <br>
   

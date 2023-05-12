@@ -28,7 +28,7 @@ RSpec.describe "Library creation" do
     fill_in("System Name:", with: "Boulder Public Library")
     fill_in("Branch Name:", with: "Meadows")
     # how to write tests for radio button or drop down options?
-    fill_in("Does this branch have study rooms?", with: false)
+    fill_in("This library has study rooms.", with: "false")
     fill_in("Number of public computers:", with: 5)
     click_button("Create Library")
 

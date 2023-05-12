@@ -29,14 +29,14 @@ RSpec.describe "Edit Library" do
   end
 
   it "can edit a library" do
-    "/libraries/#{@library_1.id}/edit"
+    visit "/libraries/#{@library_1.id}/edit"
     save_and_open_page
 
     fill_in("System Name:", with: "World Library of Noodles")
     fill_in("Branch Name:", with: "I has all the noods.")
     click_button("Update Library")
 
-    expect(current_path).to eq("/libraries")
+    expect(current_path).to eq("/libraries/#{@library_1.id}")
     expect(page).to have_content("I has all the noods.")
     expect(page).to have_content("World Library of Noodles")
   end

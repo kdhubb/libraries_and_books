@@ -23,7 +23,7 @@ class LibrariesController < ApplicationController
   def update
     library = Library.find(params[:id])
     library.update(library_params)
-    redirect_to "/libraries"
+    redirect_to "/libraries/#{library.id}"
   end
 
   private

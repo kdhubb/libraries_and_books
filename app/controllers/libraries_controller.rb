@@ -12,9 +12,8 @@ class LibrariesController < ApplicationController
   end
 
   def create
-    require 'pry'; binding.pry
     Library.create!(library_params)
-
+    redirect_to "/libraries"
   end
 
   private

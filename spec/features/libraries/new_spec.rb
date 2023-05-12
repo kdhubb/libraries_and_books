@@ -23,7 +23,8 @@ RSpec.describe "Library creation" do
 
   it "can create a new library" do
     visit libraries_new_path
-
+    save_and_open_page
+    
     fill_in("System Name", with: "Boulder Public Library")
     fill_in("Branch Name", with: "Meadows")
     # how to write tests for radio button or drop down options?

@@ -1,0 +1,15 @@
+<%= form_with url: '/libraries', method: :patch, local: true do |form| %>
+  <%= form.label :system_name, "System Name:" %> <br>
+  <%= form.text_field :system_name %> <br> 
+  <%= form.label :branch_name, "Branch Name:" %> <br>
+  <%= form.text_field :branch_name %> <br>
+  <%# not sure how to put contraints on input for this boolean field
+    checkbox or maybe drop down seemed best, went with the checkbox.  %>
+  <%= form.label :has_study_rooms, "This library has study rooms." %> <br>
+  <%= form.check_box :has_study_rooms %> <br>
+  <%= form.label :num_public_computers, "Number of Public Computers:" %> <br>
+  <%= form.number_field :num_public_computers %> <br>
+  
+
+  <%= form.submit "Edit Library" %>
+<% end %>

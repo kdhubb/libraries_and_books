@@ -12,7 +12,13 @@ class LibrariesController < ApplicationController
   end
 
   def create
+    require 'pry'; binding.pry
     Library.create!(library_params)
-    
+
+  end
+
+  private
+  def library_params
+    params.permit(:system_name, :branch_name, :has_study_rooms, :num_public_computers)
   end
 end

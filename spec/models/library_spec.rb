@@ -49,7 +49,7 @@ RSpec.describe Library, type: :model do
 
   describe "class methods" do 
     it "#order_branches_by_date" do 
-      expect(Library.order_branches_by_date).to eq(Library.order(:created_at))
+      expect(Library.order_branches_by_date).to eq(Library.order(created_at: :desc))
     end
   end
 end

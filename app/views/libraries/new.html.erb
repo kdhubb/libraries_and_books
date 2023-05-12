@@ -4,13 +4,12 @@
   <%= form.label :branch_name, "Branch Name:" %> <br>
   <%= form.text_field :branch_name %> <br>
   <%# not sure how to put contraints on input for this boolean field
-    looked into radio button, drop down and checkbox, none seem to fit the bill.AR coercion
-    rules will apply here for non-conforming input, but it's not perfect. %>
-  <%= form.label :has_study_rooms,"This library has study rooms. (Please enter true or false)." %> <br>
-  <%= form.text_field :has_study_rooms %> <br>
+    checkbox or maybe drop down seemed best, went with the checkbox.  %>
+  <%= form.label :has_study_rooms, "This library has study rooms." %> <br>
+  <%= form.check_box :has_study_rooms %> <br>
   <%= form.label :num_public_computers, "Number of Public Computers:" %> <br>
   <%= form.number_field :num_public_computers %> <br>
   
 
-  <%= form.submit "Create Artist" %>
+  <%= form.submit "Create Library" %>
 <% end %>

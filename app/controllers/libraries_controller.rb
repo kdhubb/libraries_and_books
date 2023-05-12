@@ -10,4 +10,9 @@ class LibrariesController < ApplicationController
 
   def new
   end
+
+  def create
+    Library.create!(library_params)
+    
+  end
 end

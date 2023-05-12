@@ -21,8 +21,8 @@ RSpec.describe "Library creation" do
     expect(current_path).to eq("/libraries/new")
   end
 
-  xit "can create a new library" do
-    visit new_libraries_path
+  it "can create a new library" do
+    visit libraries_new_path
 
     fill_in("System Name", with: "Boulder Public Library")
     fill_in("Branch Name", with: "Meadows")

@@ -32,5 +32,6 @@ RSpec.describe "libraries index page", type: :feature do
     expect(page).to have_content("Number of Books: 2")
     # Look for testing language to test for link locations
     expect(page).to have_content("Browse books at #{library_1.branch_name} Branch Library")
+    expect(page).to have_content("Edit Library")
   end
 end

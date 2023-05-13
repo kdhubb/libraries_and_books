@@ -48,7 +48,8 @@ RSpec.describe Book, type: :model do
 
     it "sort_by_author" do 
       # returns all books in alphabetical order by author
-      expect(Book.sort_by_author).to eq([@book_5, @book_1, @book_2, @book_3, @book_4])
+      expect(Book.sort_by_author("true")).to eq([@book_5, @book_1, @book_2, @book_3, @book_4])
+      expect(Book.sort_by_author("foo")).to eq([@book_3, @book_5, @book_4, @book_2, @book_1])
     end
   end
 end

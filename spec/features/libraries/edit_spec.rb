@@ -7,7 +7,7 @@ RSpec.describe "Edit Library" do
                                 has_study_rooms: true,
                                 num_public_computers: 10)
   end
-  it "links to the new page from the libraries index" do
+  it "links to the edit page from the library's show page" do
     visit "/libraries/#{@library_1.id}"
 
     click_link("Update Library")

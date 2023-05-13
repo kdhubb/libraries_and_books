@@ -1,6 +1,6 @@
 <p><a href="/libraries">All Libraries</a> | <a href="/books">All Books</a>
 <h1> All The Books! </h1>
-<% @books.each do |book| %>
+<% @books_on_shelf.each do |book| %>
   <h2>Title: <%= book.title %></h2>
   <h3>Author: <%= book.author %></h3>
   <p> Available for checkout: <%= if book.on_shelf == true

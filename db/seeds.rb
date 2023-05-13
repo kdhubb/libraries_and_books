@@ -34,7 +34,7 @@
                       title: "The Sympathizer",
                       on_shelf: true,
                       ytd_circ: 2)
-@book_5 = @library_1.books.create!(barcode: 9221,
+@book_5 = @library_1.books.create!(barcode: 4398,
                       author: "Kali Fajardo-Anstine",
                       title: "Sabrina and Corina",
                       on_shelf: true,

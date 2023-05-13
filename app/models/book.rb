@@ -5,14 +5,11 @@ class Book < ApplicationRecord
     all.where(on_shelf: true)
   end
 
-  def self.sort_by_author
-    order(:author)
+  def self.sort_by_author(sort_author_param)
+    if sort_author_param == "true"
+      order(:author)
+    else 
+      all
+    end
   end
-
-  # def self.display_sort
-  #   if params[:sort_author] == true
-  #     self.sort_by_author
-  #   end
-  # end
-  # params are not here - only in controllers
 end

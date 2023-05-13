@@ -1,12 +1,7 @@
 class LibraryBooksController < ApplicationController
   def index
     @library = Library.find(params[:id])
-    if params[:sort_author] == true 
-      @library_books = @library.books.sort_by_author
-    else 
-      @library_books = @library.books
-    end
-    require 'pry'; binding.pry
+    @library_books = @library.books.sort_by_author(params[:sort_author])
   end
 
   def new

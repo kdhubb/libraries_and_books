@@ -6,6 +6,7 @@ class LibraryBooksController < ApplicationController
     else 
       @library_books = @library.books
     end
+    require 'pry'; binding.pry
   end
 
   def new

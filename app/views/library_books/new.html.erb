@@ -1,0 +1,14 @@
+<%= form_with url: "/libraries/#{@library.id}/books", method: :post, local: true do |form| %>
+  <%= form.label :barcode %> <br>
+  <%= form.number_field :barcode %> <br> 
+  <%= form.label :author %> <br>
+  <%= form.text_field :author %> <br>
+  <%= form.label :title %> <br>
+  <%= form.text_field :title %> <br>
+  <%= form.label :on_shelf, "This book is available for checkout, on the shelf." %> <br>
+  <%= form.check_box :on_shelf %> <br>
+  <%= form.label :ytd_circ, "Number of circulations so far this year:" %> <br>
+  <%= form.number_field :ytd_circ %> <br>
+  
+  <%= form.submit "Add Book" %>
+<% end %>

@@ -9,9 +9,10 @@ class Book < ApplicationRecord
     order(:author)
   end
 
-  def self.display_sort
-    if params[:sort_author] == true
-      self.sort_by_author
-    end
-  end
+  # def self.display_sort
+  #   if params[:sort_author] == true
+  #     self.sort_by_author
+  #   end
+  # end
+  # params are not here - only in controllers
 end

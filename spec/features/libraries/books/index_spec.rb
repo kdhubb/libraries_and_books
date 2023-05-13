@@ -1,14 +1,6 @@
 require "rails_helper"
 
 RSpec.describe "A library's books index page", type: :feature do 
-  # [ ] done
-
-  # User Story 5, Parent Children Index 
-  
-  # As a visitor
-  # When I visit '/parents/:parent_id/child_table_name'
-  # Then I see each Child that is associated with that Parent with each Child's attributes
-  # (data from each column that is on the child table)
   it "displays all attributes of all books at a given library" do 
     library_1 = Library.create!(system_name: "Denver Public Library",
                                 branch_name: "Pauline Robinson",
@@ -39,7 +31,8 @@ RSpec.describe "A library's books index page", type: :feature do
                                       on_shelf: true,
                                       ytd_circ: 2)
     
-    visit "/libraries/#{library_1.id}/books"
+    # visit "/libraries/#{library_1.id}/books"
+    visit "/libraries/#{library_1.id}/books?sort_author=true"
     save_and_open_page
 
     expect(page).to have_content("Barcode: #{book_1.barcode}")

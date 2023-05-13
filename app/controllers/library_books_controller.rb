@@ -1,6 +1,8 @@
 class LibraryBooksController < ApplicationController
   def index
     @library = Library.find(params[:id])
+    require 'pry'; binding.pry
+    @library_books = @library.books.display_sort
   end
 
   def new

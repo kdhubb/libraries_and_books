@@ -1,7 +1,7 @@
 <p><a href="/libraries">All Libraries</a> | <a href="/books">All Books</a>
 <h1> <%=@library.branch_name%> </h1>
 <h2> <%=@library.system_name%> </h2>
-<% @library.books.each do |book| %>
+<% @library_books.each do |book| %>
 <h3>Title: <%= book.title %></h3>
   <h3>Author: <%= book.author %></h3>
   <p> Available for checkout: <%= if book.on_shelf == true
@@ -11,6 +11,7 @@
                                   end %></p>
   <p>Checkouts this year: <%= book.ytd_circ %></p>
   <p>Barcode: <%= book.barcode %></p>
-  <% end %>
-  <p><a href="/libraries/<%="#{@library.id}/books/new" %>"> Add Book </a></p>
+<% end %>
+<p><a href="/libraries/<%="#{@library.id}/books?sort_author=true" %>"> Sort Books by Author </a></p>
+<p><a href="/libraries/<%="#{@library.id}/books/new" %>"> Add Book </a></p>
 

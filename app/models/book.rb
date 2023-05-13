@@ -8,4 +8,10 @@ class Book < ApplicationRecord
   def self.sort_by_author
     order(:author)
   end
+
+  def self.display_sort
+    if params[:sort_author] == true
+      self.sort_by_author
+    end
+  end
 end

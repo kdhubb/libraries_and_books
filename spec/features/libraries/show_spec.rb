@@ -22,15 +22,16 @@ RSpec.describe "libraries index page", type: :feature do
                                       ytd_circ: 3)                                                                    
                           
     visit "/libraries/#{library_1.id}"
-    save_and_open_page
+    # save_and_open_page
 
-    expect(page).to have_content(library_1.system_name)
+    expect(page).to have_content("#{library_1.system_name} System")
     expect(page).to_not have_content(library_2.branch_name)
-    expect(page).to have_content(library_1.branch_name)
+    expect(page).to have_content("#{library_1.branch_name} Branch Library")
     expect(page).to have_content("This branch has study rooms.")
-    expect(page).to have_content(library_1.num_public_computers)
+    expect(page).to have_content("Public Computers: #{library_1.num_public_computers}")
     expect(page).to have_content("Number of Books: 2")
     # Look for testing language to test for link locations
-    expect(page).to have_content("Browse books at Pauline Robinson Branch Library")
+    expect(page).to have_content("Browse books at #{library_1.branch_name} Branch Library")
+    expect(page).to have_content("Edit Library")
   end
 end

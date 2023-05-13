@@ -6,6 +6,6 @@ class Library < ApplicationRecord
   end
 
   def self.order_branches_by_date
-    order(:created_at)
+    order(created_at: :desc)
   end
 end

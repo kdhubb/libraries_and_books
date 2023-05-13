@@ -3,7 +3,6 @@ class LibraryBooksController < ApplicationController
     @library = Library.find(params[:id])
     if params[:sort_author] == true 
       @library_books = @library.books.sort_by_author
-      redirect_to "/libraries/#{library.id}/books"
     else 
       @library_books = @library.books
     end

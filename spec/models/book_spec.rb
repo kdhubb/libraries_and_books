@@ -35,8 +35,14 @@ RSpec.describe Book, type: :model do
                                         ytd_circ: 2)
   end
   describe "class methods" do 
-    it "returns all books where on_shelf is true" do 
+    it "show_on_shelf" do 
+      # returns all books where on_shelf is true
       expect(Book.show_on_shelf).to eq([@book_2, @book_4])
+    end
+
+    it "sort_by_author" do 
+      # returns all books in alphabetical order by author
+      expect(Book.sort_by_author).to eq([@book_1, @book_2, @book_3, @book_4])
     end
   end
 end

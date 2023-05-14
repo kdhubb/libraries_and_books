@@ -8,6 +8,7 @@
                   end
                   %> study rooms. </p>
 <p> Number of Books: <%= @count %></p>
-<p><a href="/libraries/<%="#{@library.id}/books" %>" > Browse books at <%= "#{@library.branch_name}" %> Branch Library </a></p>
+<p><%= link_to "Browse books at #{@library.branch_name} Branch Library", "/libraries/#{@library.id}/books", method: :get %></p>
 <p><%= link_to "Edit Library", "/libraries/#{@library.id}/edit", method: :get %></p>
+<p><%= link_to "Delete Library", "/libraries/#{@library.id}", method: :delete %></p>
 

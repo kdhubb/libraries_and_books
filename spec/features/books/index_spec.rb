@@ -10,18 +10,18 @@ RSpec.describe "books index page", type: :feature do
                                 branch_name: "Athmar Park",
                                 has_study_rooms: true,
                                 num_public_computers: 15)
-    @book_1 = Book.create!(barcode: 8374,
-                          author: "Andy Weir",
-                          title: "Project Hail Mary",
-                          on_shelf: false,
-                          ytd_circ: 10,
-                          library_id: @library_1.id)
-    @book_2 = Book.create!(barcode: 9274,
-                          author: "Louise Erdrich",
-                          title: "The Night Watchman",
-                          on_shelf: true,
-                          ytd_circ: 3,
-                          library_id: @library_2.id)
+    @book_1 = @library_1.books.create!(barcode: 8374,
+                                      author: "Andy Weir",
+                                      title: "Project Hail Mary",
+                                      on_shelf: false,
+                                      ytd_circ: 10,
+                                      library_id: @library_1.id)
+    @book_2 = @library_1.books.create!(barcode: 9274,
+                                      author: "Louise Erdrich",
+                                      title: "The Night Watchman",
+                                      on_shelf: true,
+                                      ytd_circ: 3,
+                                      library_id: @library_2.id)
     end
   
   it "links to the edit page for each book from the books index page" do

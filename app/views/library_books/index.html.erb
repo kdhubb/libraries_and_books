@@ -11,6 +11,7 @@
                                   end %></p>
   <p>Checkouts this year: <%= book.ytd_circ %></p>
   <p>Barcode: <%= book.barcode %></p>
+  <p><%= link_to "Edit #{book.title}", "/books/#{book.id}/edit", method: :get %></p>
 <% end %>
 <p><%= link_to "Sort Books by Author", "/libraries/#{@library.id}/books?sort_author=true", method: :get %></p>
 <p><%= link_to "Add Book", "/libraries/#{@library.id}/books/new", method: :get %></p>

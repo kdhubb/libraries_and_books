@@ -33,7 +33,7 @@ RSpec.describe "books index page", type: :feature do
 
   it "diplays all books in the database with their attributes for all libraries" do 
     visit "/books"
-    save_and_open_page
+    # save_and_open_page
 
     expect(page).to have_content(@book_2.barcode)
     expect(page).to have_content(@book_2.author)

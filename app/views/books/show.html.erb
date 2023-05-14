@@ -8,5 +8,5 @@
 <p>Checkouts this year: <%= @book.ytd_circ %></p>
 <p>Barcode: <%= @book.barcode %></p>
 <p>Owner: <%= @book.library.branch_name %> Branch Library</p>
-<p><a href="/books/<%="#{@book.id}/edit" %>"> Update Book </a></p>
+<p><%= link_to "Update Book", "/books/#{@book.id}/edit", method: :get %></p>
 <p><%= link_to "Delete Book", "/books/#{@book.id}", method: :delete %></p>

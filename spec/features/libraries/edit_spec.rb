@@ -23,7 +23,7 @@ RSpec.describe "Edit Library" do
 
   it "can edit a library" do
     visit "/libraries/#{@library_1.id}/edit"
-    save_and_open_page
+    # save_and_open_page
 
     fill_in("System Name:", with: "World Library of Noodles")
     fill_in("Branch Name:", with: "I has all the noods.")

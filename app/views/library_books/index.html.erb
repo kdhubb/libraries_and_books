@@ -13,5 +13,6 @@
   <p>Barcode: <%= book.barcode %></p>
 <% end %>
 <p><%= link_to "Sort Books by Author", "/libraries/#{@library.id}/books?sort_author=true", method: :get %></p>
-<p><a href="/libraries/<%="#{@library.id}/books/new" %>"> Add Book </a></p>
+<p><%= link_to "Add Book", "/libraries/#{@library.id}/books/new", method: :get %></p>
+
 

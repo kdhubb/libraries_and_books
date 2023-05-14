@@ -40,9 +40,9 @@ RSpec.describe "A library's books index page", type: :feature do
   end
   
   it "displays all attributes of all books at a given library" do 
-    # visit "/libraries/#{@library_1.id}/books"
-    visit "/libraries/#{@library_1.id}/books?sort_author=true"
-    save_and_open_page
+    visit "/libraries/#{@library_1.id}/books"
+    # visit "/libraries/#{@library_1.id}/books?sort_author=true"
+    # save_and_open_page
 
     expect(page).to have_content("Barcode: #{@book_1.barcode}")
     expect(page).to have_content("Author: #{@book_1.author}")

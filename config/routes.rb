@@ -16,6 +16,5 @@ Rails.application.routes.draw do
   patch "/libraries/:id", to: "libraries#update"
   get "/libraries/:id/books/new", to: "library_books#new"
   post "/libraries/:id/books", to: "library_books#create"
-  # get "/libraries/:id/books/sort", to: "library_books#sort"
-  # delete "/libraries/:id", to: "libraries#destroy" 
+  delete "/libraries/:id", to: "libraries#destroy" 
 end

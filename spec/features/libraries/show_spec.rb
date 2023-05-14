@@ -22,12 +22,12 @@ RSpec.describe "libraries index page", type: :feature do
                                         ytd_circ: 3)
     end
   
-  it "links to the edit page for each book from the books index page" do
+  it "delete button deletes library and redirects to libraries index" do
     visit "/libraries/#{@library_1.id}"
 
     click_link("Delete Library")
     expect(current_path).to eq("/libraries")
-    save_and_open_page
+    # save_and_open_page
     expect(page).to_not have_content("Pauline Robinson")
     expect(Book.all).to eq([@book_2])
   end

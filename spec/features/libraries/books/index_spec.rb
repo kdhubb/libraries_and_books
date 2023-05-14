@@ -1,3 +1,10 @@
+# User Story 21, Display Records Over a Given Threshold 
+
+# As a visitor
+# When I visit the Parent's children Index Page
+# I see a form that allows me to input a number value
+# When I input a number value and click the submit button that reads 'Only return records with more than `number` of `column_name`'
+# Then I am brought back to the current index page with only the records that meet that threshold shown.
 require "rails_helper"
 
 RSpec.describe "A library's books index page", type: :feature do
@@ -14,7 +21,7 @@ RSpec.describe "A library's books index page", type: :feature do
                                       author: "Octavia Butler",
                                       title: "Dawn",
                                       on_shelf: true,
-                                      ytd_circ: 3)
+                                      ytd_circ: 2)
     @book_2 = @library_2.books.create!(barcode: 9274,
                                       author: "Louise Erdrich",
                                       title: "The Night Watchman",
@@ -38,6 +45,15 @@ RSpec.describe "A library's books index page", type: :feature do
     click_link("Edit Dawn")
     expect(current_path).to eq("/books/#{@book_1.id}/edit")
   end
+
+  it "links to display books with at minimum number of circs" do
+    visit "/libraries/#{@library_1.id}/books"
+
+    fill_in("Find books with at least", with: 3).
+    expect(current_path).to eq("/libraries/#{@library_1.id}/books?filter_circs=3")
+    expect(page).to have_content("Project Hail Mary")
+    expect(page).to_not have_content("Dawn")
+  end
   
   it "displays all attributes of all books at a given library" do 
     visit "/libraries/#{@library_1.id}/books"
@@ -58,5 +74,7 @@ RSpec.describe "A library's books index page", type: :feature do
     expect(page).to_not have_content(@book_2.author)
     expect(page).to have_content("All Books")
     expect(page).to have_content("All Libraries")
+    expect(page).to have_content("Sort Books by Author")
+    expect(page).to have_content("Add Book")
   end
 end

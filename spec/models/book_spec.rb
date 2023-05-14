@@ -27,7 +27,7 @@ RSpec.describe Book, type: :model do
                                         author: "Viet Thanh Nguyen",
                                         title: "The Sympathizer",
                                         on_shelf: true,
-                                        ytd_circ: 2)
+                                        ytd_circ: 1)
     @book_2 = @library_2.books.create!(barcode: 9274,
                                         author: "Louise Erdrich",
                                         title: "The Night Watchman",
@@ -50,6 +50,11 @@ RSpec.describe Book, type: :model do
       # returns all books in alphabetical order by author
       expect(Book.sort_by_author("true")).to eq([@book_5, @book_1, @book_2, @book_3, @book_4])
       expect(Book.sort_by_author("foo")).to eq([@book_3, @book_5, @book_4, @book_2, @book_1])
+    end
+
+    it "filter_circs" do 
+      expect(Book.filter_circs(4)).to eq([@book_5, @book_1])
+      expect(Book.filter_circs(2)).to eq([@book_3, @book_5, @book_2, @book_1])
     end
   end
 end

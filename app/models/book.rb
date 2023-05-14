@@ -12,4 +12,12 @@ class Book < ApplicationRecord
       all
     end
   end
+
+  def self.filter_circs(num)
+    if num != nil 
+      where("ytd_circ >= '#{num}'")
+    else 
+      all
+    end
+  end
 end

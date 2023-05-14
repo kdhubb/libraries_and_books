@@ -1,5 +1,5 @@
 class Library < ApplicationRecord
-  has_many :books
+  has_many :books, dependent: :delete_all
 
   def count_books
     self.books.count

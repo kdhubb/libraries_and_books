@@ -14,6 +14,13 @@ RSpec.describe "Edit Library" do
     expect(current_path).to eq("/libraries/#{@library_1.id}/edit")
   end
 
+  it "links to the edit page from the libraries index" do
+    visit libraries_path
+
+    click_link("Edit Pauline Robinson Branch Library")
+    expect(current_path).to eq("/libraries/#{@library_1.id}/edit")
+  end
+
   it "can edit a library" do
     visit "/libraries/#{@library_1.id}/edit"
     # save_and_open_page

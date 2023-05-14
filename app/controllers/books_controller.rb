@@ -17,6 +17,12 @@ class BooksController < ApplicationController
     redirect_to "/books/#{book.id}"
   end
 
+  def destroy
+    @book = Book.find(params[:id])
+    @book.destroy
+    redirect_to "/books"
+  end
+
   private
   def book_params
     params.permit(:barcode, :author, :title, :on_shelf, :ytd_circ)

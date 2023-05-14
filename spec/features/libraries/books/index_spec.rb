@@ -74,7 +74,7 @@ RSpec.describe "A library's books index page", type: :feature do
     expect(page).to_not have_content(@book_2.author)
     expect(page).to have_content("All Books")
     expect(page).to have_content("All Libraries")
-    expect(page).to have_content("Sort Books by Author")
+    expect(page).to have_content("Sort All Books by Author")
     expect(page).to have_content("Add Book")
   end
 end

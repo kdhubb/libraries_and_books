@@ -1,7 +1,7 @@
 class LibraryBooksController < ApplicationController
   def index
     @library = Library.find(params[:id])
-    @library_books = @library.books.sort_by_author(params[:sort_author])
+    @library_books = @library.books.sort_by_author(params[:sort_author]).filter_circs(params[:filter_circs])
   end
 
   def new
@@ -12,11 +12,6 @@ class LibraryBooksController < ApplicationController
     library = Library.find(params[:id])
     library.books.create!(book_params)
     redirect_to "/libraries/#{library.id}/books"
-  end
-
-  def sorted
-    library = Library.find(params[:id])
-    @sorted_books = library.books.sort_by_author
   end
 
   private

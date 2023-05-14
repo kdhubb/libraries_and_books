@@ -14,8 +14,8 @@
   <p><%= link_to "Edit #{book.title}", "/books/#{book.id}/edit", method: :get %></p>
 <% end %>
 <%= form_with url: "/libraries/#{@library.id}/books", method: :get, local: true do |form| %>
-  <%= form.label :ytd_circ, "Filter books by mimum number of circulations" %> <br>
-  <%= form.number_field :ytd_circ %> <br>
+  <%= form.label :filter_circs, "Filter books by mimum number of circulations" %> <br>
+  <%= form.number_field :filter_circs, params[:filter_circs] %> <br>
   <%= form.submit "Filter Books" %>
 <% end %>
 <p><%= link_to "Sort All Books by Author", "/libraries/#{@library.id}/books?sort_author=true", method: :get %></p>

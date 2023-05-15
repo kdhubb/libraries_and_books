@@ -1,7 +1,7 @@
 <p><a href="/libraries">All Libraries</a> | <a href="/books">All Books</a>
 <h1> All Public Libraries </h1>
 <% @libraries.each do |library| %>
-  <h3>Library Branch: <%= library.branch_name %></h3>
+  <p><%= link_to "Library Branch: #{library.branch_name}", "/libraries/#{library.id}", method: :get %></p>
   <p>System: <%= library.system_name %></p>
   <p> Date Created: <%= library.created_at %></p>
   <p><%= link_to "Edit #{library.branch_name} Branch Library", "/libraries/#{library.id}/edit", method: :get %></p>

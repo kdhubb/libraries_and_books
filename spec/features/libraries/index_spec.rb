@@ -46,4 +46,12 @@ RSpec.describe "libraries index page", type: :feature do
     expect(page).to_not have_content("Pauline Robinson")
     expect(Book.all).to eq([@book_2])
   end
+
+  it "Branch name links to show page for each library" do
+    visit "/libraries"
+
+    save_and_open_page
+    click_link("Library Branch: Pauline Robinson")
+    expect(current_path).to eq("/libraries/#{@library_1.id}")
+  end
 end

@@ -27,7 +27,6 @@ RSpec.describe "libraries index page", type: :feature do
 
     click_link("Delete Library")
     expect(current_path).to eq("/libraries")
-    # save_and_open_page
     expect(page).to_not have_content("Pauline Robinson")
     expect(Book.all).to eq([@book_2])
   end
@@ -35,7 +34,6 @@ RSpec.describe "libraries index page", type: :feature do
   it "diplays a given library's attributes on a show page" do 
     
     visit "/libraries/#{@library_1.id}"
-    # save_and_open_page
 
     expect(page).to have_content("#{@library_1.system_name} System")
     expect(page).to_not have_content(@library_2.branch_name)

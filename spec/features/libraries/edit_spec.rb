@@ -10,7 +10,7 @@ RSpec.describe "Edit Library" do
   it "links to the edit page from the library's show page" do
     visit "/libraries/#{@library_1.id}"
 
-    click_link("Update Library")
+    click_on("Edit Library")
     expect(current_path).to eq("/libraries/#{@library_1.id}/edit")
   end
 
@@ -23,7 +23,6 @@ RSpec.describe "Edit Library" do
 
   it "can edit a library" do
     visit "/libraries/#{@library_1.id}/edit"
-    # save_and_open_page
 
     fill_in("System Name:", with: "World Library of Noodles")
     fill_in("Branch Name:", with: "I has all the noods.")

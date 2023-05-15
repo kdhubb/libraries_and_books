@@ -51,8 +51,6 @@ RSpec.describe "A library's books index page", type: :feature do
   
     fill_in("filter_circs", with: 3)
     click_button("Filter Books")
-    save_and_open_page
-    # visit "/libraries/#{@library_1.id}/books?filter_circs=3"
 
     # Add test to check uri path to match search query??????
     expect(page).to have_content("Project Hail Mary")
@@ -62,7 +60,6 @@ RSpec.describe "A library's books index page", type: :feature do
   it "displays all attributes of all books at a given library" do 
     visit "/libraries/#{@library_1.id}/books"
     # visit "/libraries/#{@library_1.id}/books?sort_author=true"
-    # save_and_open_page
 
     expect(page).to have_content("Barcode: #{@book_1.barcode}")
     expect(page).to have_content("Author: #{@book_1.author}")

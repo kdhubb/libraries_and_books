@@ -25,7 +25,6 @@ RSpec.describe "libraries index page", type: :feature do
   it "diplays the system and branch name of each library" do 
                           
     visit "/libraries"
-    # save_and_open_page
 
     expect(page).to have_content("All Public Libraries")
     expect(page).to have_content("System: #{@library_1.system_name}")
@@ -41,8 +40,8 @@ RSpec.describe "libraries index page", type: :feature do
     visit "/libraries"
 
     click_link("Delete Pauline Robinson Branch Library")
+    
     expect(current_path).to eq("/libraries")
-    # save_and_open_page
     expect(page).to_not have_content("Pauline Robinson")
     expect(Book.all).to eq([@book_2])
   end
@@ -50,7 +49,6 @@ RSpec.describe "libraries index page", type: :feature do
   it "Branch name links to show page for each library" do
     visit "/libraries"
 
-    save_and_open_page
     click_link("Library Branch: Pauline Robinson")
     expect(current_path).to eq("/libraries/#{@library_1.id}")
   end

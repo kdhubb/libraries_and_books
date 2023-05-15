@@ -27,14 +27,12 @@ RSpec.describe "books show page", type: :feature do
 
     click_link("Delete Book")
     expect(current_path).to eq("/books")
-    save_and_open_page
     expect(page).to_not have_content("Project Hail Mary")
   end
   
   it "displays all attributes of the given book" do 
     
     visit "/books/#{@book_1.id}"
-    # save_and_open_page
 
     expect(page).to have_content("Barcode: #{@book_1.barcode}")
     expect(page).to have_content("Author: #{@book_1.author}")

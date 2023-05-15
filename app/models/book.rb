@@ -23,9 +23,10 @@ class Book < ApplicationRecord
 
   def self.sort_num_books(sort_param)
     if sort_param == "true"
-      book_count = group(:library_id).order(:count).count
-      book_count
-      end
+      sorted_libs = []
+      book_count = group(:library_id).order(count: :desc).count
+      book_count.each_key {|lib_id| sorted_libs << Library.find(lib_id)}
+      sorted_libs
     else
       all
     end

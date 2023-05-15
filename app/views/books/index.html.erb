@@ -1,7 +1,7 @@
 <p><a href="/libraries">All Libraries</a> | <a href="/books">All Books</a>
 <h1> All The Books! </h1>
 <% @books_on_shelf.each do |book| %>
-  <h2>Title: <%= book.title %></h2>
+  <p><%= link_to "Title: #{book.title}", "/books/#{book.id}", method: :get %></p>
   <h3>Author: <%= book.author %></h3>
   <p> Available for checkout: <%= if book.on_shelf == true
                                     "yes"
@@ -12,4 +12,6 @@
   <p>Barcode: <%= book.barcode %></p>
   <p>Owner: <%= book.library.branch_name %> Branch Library</p>
   <p><%= link_to "Edit #{book.title}", "/books/#{book.id}/edit", method: :get %></p>
+  <p><%= link_to "Delete #{book.title}", "/books/#{book.id}", method: :delete %></p>
+
 <% end %>

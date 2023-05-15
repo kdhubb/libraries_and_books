@@ -31,6 +31,13 @@ RSpec.describe "books index page", type: :feature do
     expect(current_path).to eq("/books/#{@book_2.id}/edit")
   end
 
+  it "links to the show page for each book from the books index page" do
+    visit "/books"
+
+    click_link("Title: The Night Watchman")
+    expect(current_path).to eq("/books/#{@book_2.id}")
+  end
+
   it "delete button deletes book and redirects to books index" do
     visit "/books"
 

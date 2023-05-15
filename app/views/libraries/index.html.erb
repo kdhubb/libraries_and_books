@@ -1,4 +1,4 @@
-<p><a href="/libraries">All Libraries</a> | <a href="/books">All Books</a>
+
 <h1> All Public Libraries </h1>
 <% @libraries.each do |library| %>
   <p><%= link_to "Library Branch: #{library.branch_name}", "/libraries/#{library.id}", method: :get %></p>

@@ -54,7 +54,7 @@ RSpec.describe Library, type: :model do
   end
 
   describe "class methods" do 
-    it "#order_branches_by_date" do 
+    it "order_branches_by_date" do 
       expect(Library.order_branches_by_date).to eq([@library_2, @library_1])
     end
   end

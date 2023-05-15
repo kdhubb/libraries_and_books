@@ -17,7 +17,6 @@ RSpec.describe "Library Book creation" do
 
   it "can create a new library" do
     visit "/libraries/#{@library_1.id}/books/new"
-    save_and_open_page
 
     fill_in("Barcode", with: 8936)
     fill_in("Author", with: "Eloghosa Osunde")

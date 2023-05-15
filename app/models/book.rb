@@ -1,5 +1,5 @@
 class Book < ApplicationRecord
-  belongs_to :library
+  belongs_to :library, counter_cache: true
 
   def self.show_on_shelf
     all.where(on_shelf: true)

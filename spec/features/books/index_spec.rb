@@ -41,7 +41,6 @@ RSpec.describe "books index page", type: :feature do
   it "delete button deletes book and redirects to books index" do
     visit "/books"
 
-    save_and_open_page
     click_link("Delete #{@book_2.title}")
     expect(current_path).to eq("/books")
     expect(page).to_not have_content("The Night Watchman")
@@ -49,7 +48,6 @@ RSpec.describe "books index page", type: :feature do
 
   it "diplays all books in the database with their attributes for all libraries" do 
     visit "/books"
-    # save_and_open_page
 
     expect(page).to have_content(@book_2.barcode)
     expect(page).to have_content(@book_2.author)

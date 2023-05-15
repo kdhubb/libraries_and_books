@@ -21,7 +21,6 @@ RSpec.describe "Edit Book" do
 
   it "can edit a book" do
     visit "/books/#{@book_1.id}/edit"
-    save_and_open_page
 
     fill_in("Barcode", with: 2984)
     check("This book is available for checkout, on the shelf.")

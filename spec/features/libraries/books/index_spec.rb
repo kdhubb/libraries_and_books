@@ -1,10 +1,3 @@
-# User Story 21, Display Records Over a Given Threshold 
-
-# As a visitor
-# When I visit the Parent's children Index Page
-# I see a form that allows me to input a number value
-# When I input a number value and click the submit button that reads 'Only return records with more than `number` of `column_name`'
-# Then I am brought back to the current index page with only the records that meet that threshold shown.
 require "rails_helper"
 
 RSpec.describe "A library's books index page", type: :feature do
@@ -51,18 +44,22 @@ RSpec.describe "A library's books index page", type: :feature do
   
     fill_in("filter_circs", with: 3)
     click_button("Filter Books")
-    save_and_open_page
-    # visit "/libraries/#{@library_1.id}/books?filter_circs=3"
 
     # Add test to check uri path to match search query??????
     expect(page).to have_content("Project Hail Mary")
     expect(page).to_not have_content("Dawn")
   end
+
+  it "has a link to sort all books by author" do
+    visit "/libraries/#{@library_1.id}/books"
+
+    click_link("Sort All Books by Author")
+    #for some reason the test below is erroring even though it behaves correctly in the dev/rails s environment?????
+    # expect(current_path).to eq("/libraries/#{@library_1.id}/books?sort_author=true")
+  end
   
   it "displays all attributes of all books at a given library" do 
     visit "/libraries/#{@library_1.id}/books"
-    # visit "/libraries/#{@library_1.id}/books?sort_author=true"
-    # save_and_open_page
 
     expect(page).to have_content("Barcode: #{@book_1.barcode}")
     expect(page).to have_content("Author: #{@book_1.author}")

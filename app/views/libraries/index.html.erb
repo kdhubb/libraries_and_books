@@ -1,10 +1,12 @@
-<p><a href="/libraries">All Libraries</a> | <a href="/books">All Books</a>
+
 <h1> All Public Libraries </h1>
 <% @libraries.each do |library| %>
   <p><%= link_to "Library Branch: #{library.branch_name}", "/libraries/#{library.id}", method: :get %></p>
   <p>System: <%= library.system_name %></p>
+  <p>Number of Books: <%= library.books.count %></p>
   <p> Date Created: <%= library.created_at %></p>
   <p><%= link_to "Edit #{library.branch_name} Branch Library", "/libraries/#{library.id}/edit", method: :get %></p>
   <p><%= link_to "Delete #{library.branch_name} Branch Library", "/libraries/#{library.id}", method: :delete %></p>
 <% end %>
-<p><a href="/libraries/new"> New Library </a></p>
+<p><%= link_to "Sort Libraries by Number of Books", "/libraries?sort_num_books=true", method: :get %></p>
+<p><%= link_to "New Library", "/libraries/new", method: :get %></p>

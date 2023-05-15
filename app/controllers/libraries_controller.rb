@@ -1,6 +1,6 @@
 class LibrariesController < ApplicationController
   def index 
-    @libraries = Library.order_branches_by_date
+    @libraries = Library.sort_num_books(params[:sort_num_books]).order_branches_by_date
   end
 
   def show
@@ -27,8 +27,7 @@ class LibrariesController < ApplicationController
   end
 
   def destroy
-    @library = Library.find(params[:id])
-    @library.destroy
+    Library.destroy(params[:id])
     redirect_to "/libraries"
   end
 

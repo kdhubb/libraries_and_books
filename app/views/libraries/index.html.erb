@@ -3,6 +3,7 @@
 <% @libraries.each do |library| %>
   <p><%= link_to "Library Branch: #{library.branch_name}", "/libraries/#{library.id}", method: :get %></p>
   <p>System: <%= library.system_name %></p>
+  <p>Number of Books: <%= library.books.count %></p>
   <p> Date Created: <%= library.created_at %></p>
   <p><%= link_to "Edit #{library.branch_name} Branch Library", "/libraries/#{library.id}/edit", method: :get %></p>
   <p><%= link_to "Delete #{library.branch_name} Branch Library", "/libraries/#{library.id}", method: :delete %></p>

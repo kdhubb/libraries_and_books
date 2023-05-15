@@ -56,9 +56,5 @@ RSpec.describe Book, type: :model do
       expect(Book.filter_circs(4)).to eq([@book_5, @book_1])
       expect(Book.filter_circs(2)).to eq([@book_3, @book_5, @book_2, @book_1])
     end
-
-    it "sort_num_books" do 
-      expect(Book.sort_num_books("true")).to eq([@library_2, @library_1])
-    end
   end
 end

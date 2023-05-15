@@ -8,4 +8,12 @@ class Library < ApplicationRecord
   def self.order_branches_by_date
     order(created_at: :desc)
   end
+
+  def self.sort_num_books(sort_param)
+    if sort_param == "true"
+      order(books_count: :desc)
+    else
+      all 
+    end
+  end
 end

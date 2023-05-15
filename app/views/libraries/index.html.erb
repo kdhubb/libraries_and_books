@@ -7,4 +7,4 @@
   <p><%= link_to "Edit #{library.branch_name} Branch Library", "/libraries/#{library.id}/edit", method: :get %></p>
   <p><%= link_to "Delete #{library.branch_name} Branch Library", "/libraries/#{library.id}", method: :delete %></p>
 <% end %>
-<p><a href="/libraries/new"> New Library </a></p>
+<p><%= link_to "New Library", "/libraries/new", method: :get %></p>

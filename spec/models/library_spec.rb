@@ -55,7 +55,6 @@ RSpec.describe Library, type: :model do
 
   describe "class methods" do 
     it "#order_branches_by_date" do 
-      # add created at time stamps to test setup and fix this
       expect(Library.order_branches_by_date).to eq([@library_2, @library_1])
     end
   end

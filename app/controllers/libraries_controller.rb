@@ -27,8 +27,7 @@ class LibrariesController < ApplicationController
   end
 
   def destroy
-    @library = Library.find(params[:id])
-    @library.destroy
+    Library.destroy(params[:id])
     redirect_to "/libraries"
   end
 

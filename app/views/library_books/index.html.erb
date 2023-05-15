@@ -13,10 +13,10 @@
   <p>Barcode: <%= book.barcode %></p>
   <p><%= link_to "Edit #{book.title}", "/books/#{book.id}/edit", method: :get %></p>
 <% end %>
-<%= form_tag url: "/libraries/#{@library.id}/books", method: :get, local: true do |form| %>
-  <%= label_tag(:filter_circs, "Filter books by mimum number of circulations:") %> <br>
-  <%= number_field_tag :filter_circs, params[:filter_circs] %> <br>
-  <%= submit_tag("Filter Books") %>
+<%= form_with url: "/libraries/#{@library.id}/books", method: :get, local: true do |form| %>
+  <%= form.label "Filter books by minimum number of circulations:" %> <br>
+  <%= form.number_field :filter_circs %> <br>
+  <%= form.submit "Filter Books" %>
 <% end %>
 <p><%= link_to "Sort All Books by Author", "/libraries/#{@library.id}/books?sort_author=true", method: :get %></p>
 <p><%= link_to "Add Book", "/libraries/#{@library.id}/books/new", method: :get %></p>

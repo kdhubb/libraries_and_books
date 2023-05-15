@@ -1,4 +1,4 @@
-
+Library.destroy_all
 
 @library_1 = Library.create!(system_name: "Denver Public Library",
                             branch_name: "Pauline Robinson",

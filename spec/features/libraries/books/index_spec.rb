@@ -48,10 +48,13 @@ RSpec.describe "A library's books index page", type: :feature do
 
   it "links to display books with at minimum number of circs" do
     visit "/libraries/#{@library_1.id}/books"
-
-    fill_in("Filter books by mimum number of circulations:", with: 3).
-    # expect(current_path).to eq("/libraries/#{@library_1.id}/books?filter_circs=3")
+  
+    fill_in("filter_circs", with: 3)
+    click_button("Filter Books")
     save_and_open_page
+    # visit "/libraries/#{@library_1.id}/books?filter_circs=3"
+
+    # Add test to check uri path to match search query??????
     expect(page).to have_content("Project Hail Mary")
     expect(page).to_not have_content("Dawn")
   end

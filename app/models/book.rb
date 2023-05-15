@@ -13,9 +13,9 @@ class Book < ApplicationRecord
     end
   end
 
-  def self.filter_circs(num)
-    if num != nil 
-      where("ytd_circ >= '#{num}'")
+  def self.filter_circs(search_params)
+    if search_params != nil 
+      where("ytd_circ >= '#{search_params}'")
     else 
       all
     end

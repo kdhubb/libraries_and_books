@@ -1,7 +1,7 @@
 class LibraryBooksController < ApplicationController
   def index
     @library = Library.find(params[:id])
-    @library_books = @library.books.sort_by_author(params[:sort_author])
+    @library_books = @library.books.sort_by_author(params[:sort_author]).filter_circs(search_params[:filter_circs])
   end
 
   def new
@@ -14,13 +14,12 @@ class LibraryBooksController < ApplicationController
     redirect_to "/libraries/#{library.id}/books"
   end
 
-  def sorted
-    library = Library.find(params[:id])
-    @sorted_books = library.books.sort_by_author
-  end
-
   private
   def book_params
     params.permit(:barcode, :author, :title, :on_shelf, :ytd_circ)
+  end
+
+  def search_params
+    params.permit(:filter_circs, :ytd_circ)
   end
 end

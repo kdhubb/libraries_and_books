@@ -35,7 +35,7 @@ RSpec.describe "libraries index page", type: :feature do
     expect(page).to have_content("Library Branch: #{@library_2.branch_name}")
     expect(page).to have_content("Date Created: #{@library_1.created_at}")
     expect(page).to have_content("Date Created: #{@library_2.created_at}")
-    # expect(@library_2).to appear_before(@library_1)
+    # expect("Library Branch: #{@library_2}").to appear_before("Library Branch: #{@library_1}")
     # More research needed, looks like a let block is necessary for use with orderly. 
   end
 

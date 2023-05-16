@@ -69,7 +69,8 @@ RSpec.describe "A library's books index page", type: :feature do
   
     click_link("Sort All Books by Author")
     # More research needed, looks like a let block is necessary for use with orderly. 
-
+    
+    expect(current_path).to eq("/libraries/#{@library_1.id}/books")
     # expect("Allie Brosch").to appear_before("David Sedaris")
     # expect("David Sedaris").to appear_before("Kali Fajardo-Anstine")
     # expect("Octavia Butler").to_not appear_before("Allie Brosch")

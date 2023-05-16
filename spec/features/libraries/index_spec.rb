@@ -23,6 +23,11 @@ RSpec.describe "libraries index page", type: :feature do
                                         title: "The Night Watchman",
                                         on_shelf: true,
                                         ytd_circ: 3)
+    @book_3 = @library_2.books.create!(barcode: 8094,
+                                        author: "Ocean Vuong",
+                                        title: "On Earth We're Briefly Gorgeous",
+                                        on_shelf: true,
+                                        ytd_circ: 4)
     end
   it "diplays the system and branch name of each library(in order of date created)" do 
                           
@@ -36,31 +41,30 @@ RSpec.describe "libraries index page", type: :feature do
     expect(page).to have_content("Date Created: #{@library_1.created_at}")
     expect(page).to have_content("Date Created: #{@library_2.created_at}")
     expect("Library Branch: #{@library_2.branch_name}").to appear_before("Library Branch: #{@library_1.branch_name}")
-    # More research needed, looks like a let block is necessary for use with orderly. 
   end
-
+  
   it "delete button deletes library and redirects to libraries index" do
     visit "/libraries"
-
+    
     click_link("Delete Pauline Robinson Branch Library")
     
     expect(current_path).to eq("/libraries")
     expect(page).to_not have_content("Pauline Robinson")
     expect(Book.all).to eq([@book_2])
   end
-
+  
   it "Branch name links to show page for each library" do
     visit "/libraries"
-
+    
     click_link("Library Branch: Pauline Robinson")
     expect(current_path).to eq("/libraries/#{@library_1.id}")
   end
-
+  
   it "has a link to sort all libraries by number of books" do
     visit libraries_path
-
+    
     click_link("Sort Libraries by Number of Books")
-    #for some reason the test below is erroring even though it behaves correctly in the dev/rails s environment?????
-    # expect(current_path).to eq("/libraries?sort_num_books=true")
+    
+    expect("Library Branch: #{@library_2.branch_name}").to appear_before("Library Branch: #{@library_1.branch_name}")
   end
 end

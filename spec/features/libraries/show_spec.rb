@@ -32,7 +32,6 @@ RSpec.describe "libraries index page", type: :feature do
   end
 
   it "diplays a given library's attributes on a show page" do 
-    
     visit "/libraries/#{@library_1.id}"
 
     expect(page).to have_content("#{@library_1.system_name} System")
@@ -41,7 +40,6 @@ RSpec.describe "libraries index page", type: :feature do
     expect(page).to have_content("This branch has study rooms.")
     expect(page).to have_content("Public Computers: #{@library_1.num_public_computers}")
     expect(page).to have_content("Number of Books: 1")
-    # Look for testing language to test for link locations
     expect(page).to have_content("Browse books at #{@library_1.branch_name} Branch Library")
     expect(page).to have_content("Edit Library")
   end

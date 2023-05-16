@@ -53,6 +53,7 @@ RSpec.describe Book, type: :model do
     end
 
     it "filter_circs" do 
+      # returns all books with a given number of ytd circs
       expect(Book.filter_circs(4)).to eq([@book_5, @book_1])
       expect(Book.filter_circs(2)).to eq([@book_3, @book_5, @book_2, @book_1])
     end

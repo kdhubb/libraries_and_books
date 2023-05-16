@@ -59,6 +59,7 @@ RSpec.describe Library, type: :model do
     end
 
     it "sort_num_books" do 
+      # sorts libraries by the number of books they have in descending order.
       expect(Library.sort_num_books("true")).to eq([@library_1, @library_2])
     end
   end

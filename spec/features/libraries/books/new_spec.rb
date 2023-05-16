@@ -15,7 +15,7 @@ RSpec.describe "Library Book creation" do
     expect(current_path).to eq("/libraries/#{@library_1.id}/books/new")
   end
 
-  it "can create a new library" do
+  it "can create a new book" do
     visit "/libraries/#{@library_1.id}/books/new"
 
     fill_in("Barcode", with: 8936)

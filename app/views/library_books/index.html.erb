@@ -17,7 +17,7 @@
   <%= form.number_field :filter_circs %> <br>
   <%= form.submit "Filter Books" %>
 <% end %>
-<p><%= link_to "Sort All Books by Author", "/libraries/#{@library.id}/books?sort_author=true", method: :get %></p>
+<p><%= link_to "Sort All Books by Author", :sort_author =>"true", method: :get %></p>
 <p><%= link_to "Add Book", "/libraries/#{@library.id}/books/new", method: :get %></p>
 
 

@@ -46,7 +46,7 @@ RSpec.describe "books index page", type: :feature do
     expect(page).to_not have_content("The Night Watchman")
   end
 
-  it "diplays all books in the database with their attributes for all libraries" do 
+  it "diplays all books in the database with their attributes for all libraries (if on_shelf=true)" do 
     visit "/books"
 
     expect(page).to have_content(@book_2.barcode)

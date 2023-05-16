@@ -1,13 +1,5 @@
-<%= form_with url: "/libraries/#{@library.id}", method: :patch, local: true do |form| %>
-  <%= form.label :system_name, "System Name:" %> <br>
-  <%= form.text_field :system_name %> <br> 
-  <%= form.label :branch_name, "Branch Name:" %> <br>
-  <%= form.text_field :branch_name %> <br>
-  <%= form.label :has_study_rooms, "This library has study rooms." %> <br>
-  <%= form.check_box :has_study_rooms %> <br>
-  <%= form.label :num_public_computers, "Number of Public Computers:" %> <br>
-  <%= form.number_field :num_public_computers %> <br>
-  
-
-  <%= form.submit "Update Library" %>
-<% end %>
+<%= render partial: "new_edit", locals: {
+  path: "/libraries/#{@library.id}",
+  method: :patch,
+  button_label: "Update Library"
+} %>

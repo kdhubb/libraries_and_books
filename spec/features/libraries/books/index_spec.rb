@@ -30,6 +30,21 @@ RSpec.describe "A library's books index page", type: :feature do
                                       title: "The Sympathizer",
                                       on_shelf: true,
                                       ytd_circ: 2)
+    @book_5 = @library_1.books.create!(barcode: 4398,
+                                        author: "Kali Fajardo-Anstine",
+                                        title: "Sabrina and Corina",
+                                        on_shelf: true,
+                                        ytd_circ: 5)
+    @book_6 = @library_1.books.create!(barcode: 3987,
+                                        author: "David Sedaris",
+                                        title: "When You Are Engulfed in Flames",
+                                        on_shelf: true,
+                                        ytd_circ: 7)
+    @book_7 = @library_1.books.create!(barcode: 3976,
+                                        author: "Allie Brosh",
+                                        title: "Hyperbole and A Half",
+                                        on_shelf: true,
+                                        ytd_circ: 4)
   end
 
   it "links to the edit page for each book from the books index page" do
@@ -45,17 +60,19 @@ RSpec.describe "A library's books index page", type: :feature do
     fill_in("filter_circs", with: 3)
     click_button("Filter Books")
 
-    # Add test to check uri path to match search query??????
     expect(page).to have_content("Project Hail Mary")
     expect(page).to_not have_content("Dawn")
   end
 
-  it "has a link to sort all books by author" do
+  xit "links to sort books by author name" do
     visit "/libraries/#{@library_1.id}/books"
-
+  
     click_link("Sort All Books by Author")
-    #for some reason the test below is erroring even though it behaves correctly in the dev/rails s environment?????
-    # expect(current_path).to eq("/libraries/#{@library_1.id}/books?sort_author=true")
+    # More research needed, looks like a let block is necessary for use with orderly. 
+
+    expect(@book_7).to appear_before(@book_6)
+    expect(@book_6).to appear_before(@book_5)
+    expect(@book_1).to_not appear_before(@book_7)
   end
   
   it "displays all attributes of all books at a given library" do 

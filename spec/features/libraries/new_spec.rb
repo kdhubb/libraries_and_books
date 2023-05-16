@@ -19,5 +19,7 @@ RSpec.describe "Library creation" do
 
     expect(current_path).to eq("/libraries")
     expect(page).to have_content("Meadows")
+    expect(page).to have_content("5")
+    expect(page).to have_content("Boulder Public Library")
   end
 end

@@ -46,7 +46,7 @@ RSpec.describe "libraries index page", type: :feature do
   it "delete button deletes library and redirects to libraries index" do
     visit "/libraries"
     
-    click_link("Delete Pauline Robinson Branch Library")
+    click_button("Delete Pauline Robinson Branch Library")
     
     expect(current_path).to eq("/libraries")
     expect(page).to_not have_content("Pauline Robinson")

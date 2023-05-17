@@ -41,7 +41,7 @@ RSpec.describe "books index page", type: :feature do
   it "delete button deletes book and redirects to books index" do
     visit "/books"
 
-    click_link("Delete #{@book_2.title}")
+    click_button("Delete #{@book_2.title}")
     expect(current_path).to eq("/books")
     expect(page).to_not have_content("The Night Watchman")
   end

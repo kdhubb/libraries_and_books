@@ -9,4 +9,4 @@
 <p>Barcode: <%= @book.barcode %></p>
 <p>Owner: <%= @book.library.branch_name %> Branch Library</p>
 <p><%= link_to "Update Book", "/books/#{@book.id}/edit", method: :get %></p>
-<p><%= link_to "Delete Book", "/books/#{@book.id}", method: :delete %></p>
+<p><%= button_to "Delete Book", "/books/#{@book.id}", method: :delete %></p>

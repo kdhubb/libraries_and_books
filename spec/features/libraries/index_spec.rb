@@ -50,7 +50,7 @@ RSpec.describe "libraries index page", type: :feature do
     
     expect(current_path).to eq("/libraries")
     expect(page).to_not have_content("Pauline Robinson")
-    expect(Book.all).to eq([@book_2])
+    expect(Book.all).to eq([@book_2, @book_3])
   end
   
   it "Branch name links to show page for each library" do
